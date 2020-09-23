@@ -1,3 +1,9 @@
+/**
+ * Author:	Carlos R. Arias
+ * Class:	CSC 2330 Data Structures and Programming
+ * Date:	September 23 / 2020
+ * Purpose:	A simple number guessing game
+ */
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
