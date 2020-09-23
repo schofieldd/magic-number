@@ -12,13 +12,19 @@ int main() {
 
 	int numberToGuess;
 	int userGuess;
+	int maximumGuesses, maximumToGuess;
 	bool won = false;
 	int keepGoing = 0;
 
 	do{
-		numberToGuess = rand() % 10 + 1;
-		// cout << "- - - - " << numberToGuess << " - - - -" << endl << endl;
-		for (int i = 0; i < 3; ++i) {
+		cout << "What is the maximum number to guess: ";
+		cin >> maximumToGuess;
+		cout << "How many opportunities you want: ";
+		cin >> maximumGuesses;
+
+		numberToGuess = rand() % maximumToGuess + 1;
+		cout << "- - - - " << numberToGuess << " - - - -" << endl << endl;
+		for (int i = 0; i < maximumGuesses; ++i) {
 			cout << "Give me your guess #" << i + 1 << ": ";
 			cin >> userGuess;
 			if (userGuess == numberToGuess){
