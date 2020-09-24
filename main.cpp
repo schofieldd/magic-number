@@ -24,6 +24,7 @@ int main() {
 	int keepGoing = 0;
 	int hot, warm, cold;
 	double logVal;
+	int currentDiff, lastDiff;
 
 	do{
 		cout << "What is the maximum number to guess: ";
@@ -64,7 +65,23 @@ int main() {
                     cout << "Brrrr you're freezing" << endl;
                 }// Have to give a bit more of a hint here - DPS
 
-				cout << "Guess Again..." << endl;
+                if (i == 0){
+                    currentDiff = abs(userGuess - numberToGuess);
+                }
+                else{
+                    lastDiff = currentDiff;
+                    currentDiff = abs(userGuess - numberToGuess);
+                            if (currentDiff < lastDiff){
+                                cout << "You're getting closer..." << endl;
+                            }
+                            else if (currentDiff > lastDiff){
+                                cout << "You're getting further away..." << endl;
+                            }
+                            else if (currentDiff == lastDiff){
+                                cout << "You're still just as far away!" << endl;
+                            }
+                }
+                cout << "Guess Again..." << endl;
 			}
 		}
 		/**
